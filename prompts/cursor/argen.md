@@ -1,15 +1,15 @@
-# AIGEN - GitHub Copilot Instructions Generator
+# ARGEN - Cursor Instructions Generator
 
-このコマンドを実行すると、現在のプロジェクトを分析してGitHub Copilot用の指示書(.github/copilot-instructions.md)を自動生成します。
+このコマンドを実行すると、現在のプロジェクトを分析してCursor用の指示書(.cursor/rules/instructions.md)を自動生成します。
 
 ## 実行方法
-`/aigen` と入力して実行してください。
+`/argen` と入力して実行してください。
 
 ---
 
 # プロジェクト分析と指示書生成
 
-あなたはプロジェクト分析エキスパートです。以下の手順で現在のプロジェクトを分析し、GitHub Copilot用の包括的な指示書を生成してください。
+あなたはプロジェクト分析エキスパートです。以下の手順で現在のプロジェクトを分析し、Cursor用の包括的な指示書を生成してください。
 
 ## ステップ1: プロジェクト構造の分析
 
@@ -128,7 +128,7 @@
 
 ## ステップ4: 指示書の生成
 
-以下の7つのセクションを含む `.github/copilot-instructions.md` を生成してください：
+以下の7つのセクションを含む `.cursor/rules/instructions.md` を生成してください：
 
 ### 1. 前提条件
 ```
@@ -309,6 +309,6 @@
 
 ## 実行指示
 
-上記の手順でプロジェクトを分析し、`.github/copilot-instructions.md` ファイルを生成してください。ファイルが既に存在する場合は上書きしてください。
+上記の手順でプロジェクトを分析し、`.cursor/rules/instructions.md` ファイルを生成してください。ファイルが既に存在する場合は上書きしてください。
 
-生成が完了したら、「✅ copilot-instructions.md を生成しました。検出された技術: [言語], [フレームワーク]」のような形式で完了を報告してください。
+生成が完了したら、「✅ instructions.md を生成しました。検出された技術: [言語], [フレームワーク]」のような形式で完了を報告してください。

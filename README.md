@@ -1,19 +1,36 @@
-# AIGEN - GitHub Copilot Instructions Generator
+# ARGEN - Agent Rules Generator
 
-プロジェクト構造を自動分析して、GitHub Copilot用の指示書を生成するカスタムコマンドです。
+プロジェクト構造を自動分析して、AIエージェント（GitHub Copilot、Windsurf、Cursor）用の指示書を生成するカスタムコマンドです。
 
 ## 🚀 使い方
 
-### Copilotカスタムコマンドとして実行
-```
-/aigen
+### インストール（セットアップ）
+プロジェクトにARGENをインストールしてプロンプトファイルを配置します：
+
+```bash
+# GitHub Copilot用（デフォルト）
+npx argen
+
+# または明示的に環境を指定
+npx argen --copilot    # GitHub Copilot用
+npx argen --windsurf   # Windsurf用
+npx argen --cursor     # Cursor用
 ```
 
-このコマンドを実行すると、現在のプロジェクトを分析し、`.github/copilot-instructions.md` を自動生成します。
+### Copilotカスタムコマンドとして実行
+インストール後、以下のコマンドを実行してください：
+```
+/argen
+```
+
+このコマンドを実行すると、現在のプロジェクトを分析し、環境に応じた指示書を自動生成します：
+- **GitHub Copilot**: `.github/copilot-instructions.md`
+- **Windsurf**: `.windsurf/rules/instructions.md`
+- **Cursor**: `.cursor/rules/instructions.md`
 
 ## 📊 生成される指示書の内容
 
-AIGENは以下の7つのセクションを含む包括的な指示書を生成します：
+ARGENは以下の7つのセクションを含む包括的な指示書を生成します：
 
 ### 1. 前提条件
 - AIへの基本指示（日本語回答、大規模変更の事前確認など）
@@ -43,46 +60,6 @@ AIGENは以下の7つのセクションを含む包括的な指示書を生成�
 - 言語ごとの禁止事項
 - コード品質とセキュリティに関するルール
 
-## 🔧 対応技術
-
-### 自動検出できる言語
-- JavaScript/TypeScript
-- Python
-- Java
-- C#
-- Go
-- Rust
-- PHP
-- Ruby
-- Swift
-- Kotlin
-- Dart (Flutter)
-
-### 自動検出できるフレームワーク
-- **JavaScript/TypeScript**: React, Vue, Angular, Next.js, Express, etc.
-- **Python**: Django, Flask, FastAPI, etc.
-- **Java**: Spring, Spring Boot
-- **C#**: .NET, ASP.NET Core
-- **Go**: Gin, Echo, Fiber
-- **Rust**: Actix, Rocket
-- **PHP**: Laravel, Symfony
-- **Ruby**: Rails, Sinatra
-- **Flutter/Dart**: Flutter, Material Design, Provider, Riverpod, BLoC, GetX
-
-### 自動検出できるテストフレームワーク
-- **JavaScript/TypeScript**: Jest, Vitest, Mocha, Cypress, Playwright
-- **Python**: pytest, unittest, Selenium
-- **Java**: JUnit, TestNG
-- **C#**: xUnit, NUnit
-- **Go**: testing, testify
-- **Ruby**: RSpec, Minitest
-- **Flutter/Dart**: flutter_test, integration_test, mockito
-
-## 📁 設定ファイル
-
-このコマンドは以下のプロンプトファイルを使用します：
-- `prompts/github-copilot/aigen.prompt.md` - メインの分析ロジック
-
 ## 🎯 カスタマイズ
 
 生成された指示書は、プロジェクトの要件に合わせて手動で編集することをお勧めします。特に以下の点を調整すると効果的です：
@@ -92,25 +69,21 @@ AIGENは以下の7つのセクションを含む包括的な指示書を生成�
 - 特定のビジネスドメインに関する指示
 - セキュリティポリシーの詳細
 
-## 📝 使用例
+## 🌟 対応環境
 
-### Reactプロジェクトの場合
-```
-/aigen
-```
-→ React、TypeScript、Jestに関する具体的な指示が生成されます。
+ARGENは以下のAI開発環境をサポートしています：
 
-### Python Djangoプロジェクトの場合
-```
-/aigen
-```
-→ Django、pytest、Pythonに関する指示が生成されます。
+### GitHub Copilot
+- プロンプトファイル配置先: `.github/prompts/argen.prompt.md`
+- 生成される指示書: `.github/copilot-instructions.md`
 
-### Flutterプロジェクトの場合
-```
-/aigen
-```
-→ Flutter、Dart、Provider/BLoC、flutter_testに関する具体的な指示が生成されます。
+### Windsurf
+- プロンプトファイル配置先: `.windsurf/workflows/argen.md`
+- 生成される指示書: `.windsurf/rules/instructions.md`
+
+### Cursor
+- プロンプトファイル配置先: `.cursor/commands/argen.md`
+- 生成される指示書: `.cursor/rules/instructions.md`
 
 ## 🤝 貢献
 
@@ -118,4 +91,4 @@ AIGENは以下の7つのセクションを含む包括的な指示書を生成�
 
 ## 📄 ライセンス
 
-このプロジェクトはMITライセンスの下で公開されています。
+このプロジェクトはApache-2.0ライセンスの下で公開されています。
