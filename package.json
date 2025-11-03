@@ -1,6 +1,6 @@
 {
   "name": "argen",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Agent Rules Generator - プロジェクト構造を自動分析してAIエージェントのルールファイルを生成するカスタムコマンド",
   "main": "index.js",
   "bin": {
