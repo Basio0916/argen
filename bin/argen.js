@@ -57,7 +57,7 @@ if (!fs.existsSync(targetDir)) {
 // プロンプトファイルをコピー
 if (fs.existsSync(sourceFile)) {
   fs.copyFileSync(sourceFile, targetFile);
-  console.log(`✅ argen.prompt.md を ${path.relative(cwd, targetDir)} に配置しました`);
+  console.log(`✅ ${environmentName}用のargenファイルを ${path.relative(cwd, targetDir)} に配置しました`);
   console.log(`📍 配置先: ${targetFile}`);
 } else {
   console.error('❌ ソースファイルが見つかりません:', sourceFile);
@@ -66,4 +66,3 @@ if (fs.existsSync(sourceFile)) {
 
 console.log('\n🚀 セットアップ完了！');
 console.log(`${environmentName}で /argen コマンドが使用できるようになりました。`);
-console.log('詳細は README.md をご確認ください。');
